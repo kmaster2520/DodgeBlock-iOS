@@ -26,6 +26,7 @@ class MenuScene: SKScene {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch = touches.first as UITouch!
         let location = touch.locationInNode(self)
+        //print(String(location.x) + " " + String(location.y));
         
         if let body = self.physicsWorld.bodyAtPoint(location) {
             let theName = body.node!.name
