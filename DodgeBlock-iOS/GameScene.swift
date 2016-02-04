@@ -111,8 +111,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
-        let rand = Int(arc4random_uniform(200))
-        if rand <= Int(4 + score / 10) {
+        let randd = Int(arc4random_uniform(200))
+        if randd <= Int(4 + score / 10) {
             let enemy = SKSpriteNode(color: UIColor.redColor(), size: CGSizeMake(32, 32))
             enemy.physicsBody = SKPhysicsBody(rectangleOfSize: enemy.frame.size)
             enemy.physicsBody!.allowsRotation = false
@@ -130,6 +130,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(enemy)
             let px: CGFloat
             let py: CGFloat
+            let rand = Int(arc4random_uniform(4))
             if rand == 0 {
                 px = CGFloat(arc4random_uniform(UInt32(self.frame.width)))
                 py = self.frame.height
